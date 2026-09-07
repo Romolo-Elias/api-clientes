@@ -1,9 +1,15 @@
+import 'dotenv/config';
 import mongoose from "mongoose";
+import { setServers } from "node:dns/promises";
+setServers(["8.8.8.8", "1.1.1.1"]);
+
 
 async function conectaNaDatabase() {
-    mongoose.connect("mongodb+srv://romolopsn2004_db_user:8zi5kmO8Ft9Wtxk0@cluster0.qhiuqk2.mongodb.net/?clientes=Cluster0");
+    const url = process.env.MONGOURL
+    
+    mongoose.connect(url)
 
-    return mongoose.connect;
+    return mongoose.connection;
 } 
 
 export default conectaNaDatabase
