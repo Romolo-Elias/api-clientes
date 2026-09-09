@@ -13,8 +13,8 @@ conexao.once("open", () => {
 })
 
 const app = express();
-routes(app)
 
 app.use(express.json())
+app.use(routes)
 
 export default app

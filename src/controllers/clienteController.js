@@ -1,5 +1,6 @@
 import cliente from "../models/cliente.js";
 
+
 class clienteController {
 
     static async listarClientes (req, res){
@@ -24,7 +25,7 @@ class clienteController {
     static async criarCliente (req, res){
         try{
             const { nome, email, uf } = req.body;
-            const novoCliente = await cliente.create({nome, email, uf})
+            const novoCliente = await cliente.create({nome: nome, email: email, uf: uf})
             res.status(201).json(novoCliente)
         } catch (erro){
             res.status(500).json({message: `${erro.message} Falha na requisição`})
