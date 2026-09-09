@@ -1,0 +1,10 @@
+import express from "express"
+import clientes from "./clientesRoutes"
+
+const routes = (app) =>{
+    app.route("/").get((req, res)=> res.status(200).send("Api de clientes"))
+
+    app.use(express.json(), clientes)
+}
+
+export default routes
