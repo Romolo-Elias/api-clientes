@@ -8,3 +8,5 @@ class ValidationError extends CastErro{
         super(`Os seguintes erros foram encontrados ${mensagemErro}`);
     }
 }
+
+export default ValidationError;
