@@ -1,6 +1,5 @@
 import cliente from "../models/cliente.js";
 
-
 class clienteController {
 
     static async listarClientes (req, res){

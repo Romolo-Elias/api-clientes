@@ -1,6 +1,7 @@
 import express from 'express'
 import conectaNaDatabase from './config/dbConnect.js';
 import routes from './routes/clientesRoutes.js';
+import manipuladorDeErros from './middlewares/manipuladorDeErros.js';
 
 const conexao = await conectaNaDatabase();
 
@@ -16,5 +17,7 @@ const app = express();
 
 app.use(express.json())
 app.use(routes)
+
+app.use(manipuladorDeErrosorDeErros);
 
 export default app
