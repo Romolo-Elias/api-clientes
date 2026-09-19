@@ -59,7 +59,7 @@ class clienteController {
     static async deletarCliente (req, res, next){
         try{
             const id = req.params.id
-            const clienteApagado = await cliente.findByIdAndDelete({_id: id})
+            const clienteApagado = await cliente.findByIdAndDelete(id)
 
             if(clienteApagado !== null){
                 return res.status(204).end()
