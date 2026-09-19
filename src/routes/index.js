@@ -1,5 +1,5 @@
 import express from "express"
-import clientes from "./clientesRoutes"
+import clientes from "./clientesRoutes.js"
 
 const routes = (app) =>{
     app.route("/").get((req, res)=> res.status(200).send("Api de clientes"))
